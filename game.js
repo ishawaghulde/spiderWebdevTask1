@@ -107,7 +107,7 @@ var canvas = document.getElementById("myCanvas");
 
 	function drawPlayer(){
 		if(play == true){
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			// ctx.clearRect(0, 0, canvas.width, canvas.height);
 			drawCircle();
 			drawDuet();
 			if(mult == false){
@@ -145,11 +145,11 @@ var canvas = document.getElementById("myCanvas");
 			score = score;
 		}
 		if(barWidth<200){
-			barWidth = score*50;
+			barWidth = score*2;
 			bar.style.width = barWidth + "px";
 		}
-		else if(score == 100 && play == true){
-			barWidth = score*2;
+		else if(score == 4 && play == true){
+			barWidth = score*50;
 			bar.style.width = barWidth + "px";
 			play = false;
 			console.log(flag);
@@ -487,6 +487,8 @@ var canvas = document.getElementById("myCanvas");
             	e.check();
         	});
 
+        	drawPlayer();
+
 
 		}
 	
@@ -495,9 +497,9 @@ var canvas = document.getElementById("myCanvas");
 
 
 	// if(play){
-		setInterval(drawPlayer, 10);
+		// setInterval(drawPlayer, 10);
 		setInterval(function() {
  		 //update();
     		draw();
-		}, 30);
+		}, 20);
 	// }
