@@ -1,0 +1,49 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+canvas { 
+	background: #000; 
+	display: block; 
+	margin: 0 auto; 
+}
+body{
+	background: #000;
+}
+#pause{
+	color: #FFF;
+	width: 30px;
+	height:30px;
+
+
+}
+#restart{
+	color: #FFF;
+	width: 30px;
+	height:30px;
+}
+
+#progressContainer{
+	width: 200px;
+	background-color: #DDD;
+}
+
+#progress{
+	width:1px;
+	height:30px;
+	background-color: #27C613;
+}
+
+.container{
+	padding-top: 30px;
+}
+
+#mult{
+	background-color: #000;
+	color: #FFF;
+	border-width: 0px;
+	height:30px;
+	padding-top: 0px;
+	margin-top: 0px;
+}
