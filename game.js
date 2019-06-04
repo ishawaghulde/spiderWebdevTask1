@@ -1,4 +1,6 @@
-var canvas = document.getElementById("myCanvas");
+	
+	
+	var canvas = document.getElementById("myCanvas");
 	var btn = document.getElementById("pause");
 	var img = document.getElementById("pic");
 	var ctx = canvas.getContext("2d");
@@ -41,6 +43,7 @@ var canvas = document.getElementById("myCanvas");
 	document.addEventListener("keydown", keyDownHandler, false);
 	document.addEventListener("keyup", keyUpHandler, false);
 
+	//setting up multiplayer game
 	function multiplayer(){
 		playAgain();
 		mult = true;
@@ -52,6 +55,7 @@ var canvas = document.getElementById("myCanvas");
 
 	}
 
+	//pause and play button
 	function toggle(){
 		play = !play;
 		if(play==true){
@@ -62,6 +66,7 @@ var canvas = document.getElementById("myCanvas");
 		}
 	}
 
+	//restarting the game
 	function playAgain(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		score = 0;
@@ -86,6 +91,7 @@ var canvas = document.getElementById("myCanvas");
 		console.log("restarted");
 	}
 
+	//moving the players
 	function keyDownHandler(e) {
     	if(e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = true;
@@ -104,7 +110,7 @@ var canvas = document.getElementById("myCanvas");
     	}
 	}
 
-
+	//drawing the players
 	function drawPlayer(){
 		if(play == true){
 			// ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -134,6 +140,7 @@ var canvas = document.getElementById("myCanvas");
 		
 	}
 
+	//drawing affection bar
 	function drawBar(){
 		if(mult == true && activeA == true){
 			score = scoreA;
@@ -169,6 +176,7 @@ var canvas = document.getElementById("myCanvas");
 		}
 	}
 
+	//converge when affection meter becomes full
 	function converge(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		var diff = 0.2;
@@ -190,6 +198,7 @@ var canvas = document.getElementById("myCanvas");
 
 	}
 
+	//diverge when circles coincide
 	function diverge(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		var diff = 0.2;
@@ -209,7 +218,7 @@ var canvas = document.getElementById("myCanvas");
 		}
 	}
 
-
+	//draw score for single player game
 	function drawScore(){
     	ctx.font = "16px Arial";
     	ctx.fillStyle = "#FFFFFF";
@@ -217,6 +226,7 @@ var canvas = document.getElementById("myCanvas");
     	ctx.fillText("Score: "+score, 400, 15);
 	}
 
+	//draw score for multiplayer game
 	function drawMultScore(){
 		var name = "";
 		if(activeA == true){
@@ -233,6 +243,7 @@ var canvas = document.getElementById("myCanvas");
     	ctx.fillText(nameB + " score : "+scoreB, 350, 75 );
 	}
 
+	//draw path circle
 	function drawCircle(){
 		var cenY = canvas.height-80;
 		ctx.beginPath();
@@ -245,7 +256,7 @@ var canvas = document.getElementById("myCanvas");
 		ctx.closePath();
 	}
 
-	
+	//draw the players
 	function drawDuet(){
 		var cenY = canvas.height-80;
 		ctx.beginPath();
@@ -271,6 +282,7 @@ var canvas = document.getElementById("myCanvas");
 		ctx.closePath();
 	}
 
+	//start other players tuen in multiplayer
 	function startTurn(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		
@@ -286,7 +298,7 @@ var canvas = document.getElementById("myCanvas");
 
 
 
-
+	//block variables
 	var dy = 2,
     	blocks = [],
     	minWait = 10000,
@@ -497,7 +509,6 @@ var canvas = document.getElementById("myCanvas");
 
 
 	// if(play){
-		// setInterval(drawPlayer, 10);
 		setInterval(function() {
  		 //update();
     		draw();
