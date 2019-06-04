@@ -148,8 +148,8 @@ var canvas = document.getElementById("myCanvas");
 			barWidth = score*50;
 			bar.style.width = barWidth + "px";
 		}
-		else if(score == 4 && play == true){
-			barWidth = score*50;
+		else if(score == 100 && play == true){
+			barWidth = score*2;
 			bar.style.width = barWidth + "px";
 			play = false;
 			console.log(flag);
