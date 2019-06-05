@@ -5,7 +5,7 @@
 	var img = document.getElementById("pic");
 	var ctx = canvas.getContext("2d");
 	var x = 0;
-	var dx = 0.02;
+	var dx = 0.04;
 	var radius = 70;
 	var rightPressed = false;
 	var leftPressed = false;
